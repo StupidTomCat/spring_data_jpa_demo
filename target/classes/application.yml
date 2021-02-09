@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql:///springboot_jpa?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 883203
+    driver-class-name: com.mysql.cj.jdbc.Driver #这个是高版本的，yes
+  jpa:
+    hibernate:
+      ddl-auto: update #正向工程，先存在实体类，然后根据实体类生成表
+    show-sql: true #显示sql语句
+    generate-ddl: true #开启逆向工程：先存在数据库表，然后自动生成实体类，开发阶段可以为true，上线时，得是false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect #指定mysql数据库版本5，且引擎是innodb
+  devtools:
+    restart:
+      enabled: true
